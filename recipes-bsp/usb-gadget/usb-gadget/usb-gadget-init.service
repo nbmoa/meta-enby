@@ -1,0 +1,13 @@
+[Unit]
+Description=Setup usb gadget
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/usb-gadget.init
+RemainAfterExit=true
+#ExecStop=/opt/foo/teardown-foo.sh
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
